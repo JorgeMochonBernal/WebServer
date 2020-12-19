@@ -1,0 +1,11 @@
+{
+  "name": "05-websever",
+  "version": "1.0.0",
+  "description": "app sobre el uso de http-expres-hbs en node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge Mochon Bernal",
+  "license": "ISC"
+}
