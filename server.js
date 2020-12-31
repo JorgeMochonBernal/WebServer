@@ -1,23 +1,18 @@
 
-	const express = require('express');
-	const app = express();
-	 
-	app.use(express.static(__dirname + '/public'));
-	
-	app.get('/', (req, resp) => {
-	 	let salida = {
-	 		nombre:'Coco',
-	 		edad: '6',
-	 		url: req.url
-	 	};
-		
-		resp.send(salida);
-	});
+  const express = require('express');
+  const app = express();
 
-	app.get('/data', (req,resp) => {
-		resp.send('Data');
-	});
-	 
-	app.listen(3000, () => {
-		console.log('Escuchando peticiones');
-	});
+  app.use(express.static(__dirname + '/public'));
+
+  app.listen(3000, () => {
+      console.log('Escuchando peticiones');
+  });
+
+  app.set('view engine', 'hbs');
+
+  app.get('/', (req, resp) => {
+    resp.render('home', {
+      nombre: 'Jorge',
+      anio: new Date().getFullYear()
+    });
+  });
